@@ -1,0 +1,715 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="15dp"
+    tools:context=".Clock">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/player1_pointer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/player1"
+                android:layout_toRightOf="@+id/player1"
+                android:text="Player 1 name"
+                android:textAppearance="?android:textAppearanceMedium" />
+
+            <EditText
+                android:id="@+id/player1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:selectAllOnFocus="true"
+                android:text="Player 1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/player2"
+                android:layout_toRightOf="@id/player2"
+                android:text="Player 2 name"
+                android:textAppearance="?android:textAppearanceMedium" />
+
+            <EditText
+                android:id="@+id/player2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/player1"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:selectAllOnFocus="true"
+                android:text="Player 2" />
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/horizontal_line1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray" />
+
+        <CheckBox
+            android:id="@+id/delay_time_CB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:checked="false"
+            android:onClick="isDeleyed"
+            android:text="Delay time"
+            android:textAppearance="?android:textAppearanceMedium" />
+
+        <LinearLayout
+            android:id="@+id/delay_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingTop="6dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5sp"
+                    android:text="h:"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/add_delay_hour"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="addOne"
+                    android:text="+"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/delay_hour"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="00"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/rem_delay_hour"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:onClick="minusOne"
+                    android:text="-"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingTop="6dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5sp"
+                    android:text="min:"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/add_delay_min"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="addOne"
+                    android:text="+"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/delay_min"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="00"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/rem_delay_min"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:onClick="minusOne"
+                    android:text="-"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingTop="6dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5sp"
+                    android:text="sec:"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/add_delay_sec"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="addOne"
+                    android:text="+"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/delay_sec"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="00"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/rem_delay_sec"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:onClick="minusOne"
+                    android:text="-"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/horizontal_line2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray" />
+
+        <CheckBox
+            android:id="@+id/increment_time_CB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:checked="false"
+            android:onClick="isIncremented"
+            android:text="Increment time"
+            android:textAppearance="?android:textAppearanceMedium" />
+
+        <LinearLayout
+            android:id="@+id/increment_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingTop="6dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5sp"
+                    android:text="h:"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/add_increment_hour"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="addOne"
+                    android:text="+"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/increment_hour"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="00"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/rem_increment_hour"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:onClick="minusOne"
+                    android:text="-"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingTop="6dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5sp"
+                    android:text="min:"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/add_increment_min"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="addOne"
+                    android:text="+"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/increment_min"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="00"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/rem_increment_min"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="minusOne"
+                    android:text="-"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingTop="6dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5sp"
+                    android:text="sec:"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/add_increment_sec"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="addOne"
+                    android:text="+"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/increment_sec"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="00"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/rem_increment_sec"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="minusOne"
+                    android:text="-"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="12dp"
+            android:paddingLeft="5sp"
+            android:text="Game type:"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="#000000" />
+
+        <RadioGroup
+            android:id="@+id/time_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:checkedButton="@id/time_per_game">
+
+            <RadioButton
+                android:id="@+id/time_per_game"
+                android:onClick="gameType0"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Limited time for player"
+                android:textAppearance="?android:textAppearanceMedium" />
+
+            <RadioButton
+                android:id="@+id/time_per_move"
+                android:onClick="gameType1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Limited time for each move"
+                android:textAppearance="?android:textAppearanceMedium" />
+        </RadioGroup>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/time_type"
+            android:background="@android:color/darker_gray" />
+
+        <TextView
+            android:id="@+id/player1_time_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="12dp"
+            android:paddingLeft="5sp"
+            android:text="Player time:"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:id="@+id/player_time_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/player1_time_label"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingTop="6dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5sp"
+                    android:text="h:"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/add_p1_hour"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="addOne"
+                    android:text="+"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/p1_hour"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="00"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/rem_p1_hour"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="minusOne"
+                    android:text="-"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingTop="6dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5sp"
+                    android:text="min:"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/add_p1_min"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="addOne"
+                    android:text="+"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/p1_min"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="00"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/rem_p1_min"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="minusOne"
+                    android:text="-"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingTop="6dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5sp"
+                    android:text="sec:"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/add_p1_sec"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="addOne"
+                    android:text="+"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/p1_sec"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="00"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/rem_p1_sec"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="minusOne"
+                    android:text="-"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/same_time_CB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:checked="true"
+            android:onClick="isSame"
+            android:text="Same time for each player"
+            android:textAppearance="?android:textAppearanceMedium" />
+        <TextView
+            android:id="@+id/player2_time_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/horizontal_line5"
+            android:paddingBottom="12dp"
+            android:paddingLeft="5sp"
+            android:visibility="gone"
+            android:text="Player 2 time:"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:id="@+id/player2_time_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingTop="6dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5sp"
+                    android:text="h:"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/add_p2_hour"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="addOne"
+                    android:text="+"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/p2_hour"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="00"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/rem_p2_hour"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="minusOne"
+                    android:text="-"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingTop="6dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5sp"
+                    android:text="min:"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/add_p2_min"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="addOne"
+                    android:text="+"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/p2_min"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="00"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/rem_p2_min"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="minusOne"
+                    android:text="-"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingTop="6dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5sp"
+                    android:text="sec:"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/add_p2_sec"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="addOne"
+                    android:text="+"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/p2_sec"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="00"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/rem_p2_sec"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="minusOne"
+                    android:text="-"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:onClick="start"
+            android:text="Start"
+            android:textColor="#000000" />
+    </LinearLayout>
+</ScrollView>
