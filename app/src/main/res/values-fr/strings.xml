@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Horloge d\'échecs</string>
+    <string name="delay">Temporisation</string>
+    <string name="gameType">Type de jeu:</string>
+    <string name="increment">Incrémenter le temps</string>
+    <string name="p1name">Nom du joueur 1</string>
+    <string name="p1">Joueur 1</string>
+    <string name="p1time">Joueur 1 fois:</string>
+    <string name="p2">Joueur 2</string>
+    <string name="p2name">Nom du joueur 2</string>
+    <string name="p2time">Joueur 2 fois:</string>
+    <string name="perMove">Temps limité pour chaque mouvement</string>
+    <string name="perPlayer">Temps limité pour le joueur</string>
+    <string name="playerTime">Temps du joueur:</string>
+    <string name="sameTime">Au même moment pour chaque joueur</string>
+    <string name="start">Début</string>
+    <string name="time">temps:</string>
+</resources>

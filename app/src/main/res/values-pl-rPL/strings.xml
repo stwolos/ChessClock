@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Zegar szachowy</string>
+    <string name="p1name">Imię gracza 1</string>
+    <string name="p2name">Imię gracza 2</string>
+    <string name="p2">Gracz 2</string>
+    <string name="delay">Opóźnienie</string>
+    <string name="increment">Czas dodawany co rundę</string>
+    <string name="gameType">Typ gry:</string>
+    <string name="perPlayer">Ograniczony czas dla gracza</string>
+    <string name="perMove">Ograniczony czas rundy</string>
+    <string name="sameTime">Taki sam czas gry dla obu graczy</string>
+    <string name="p1time">Czas dla gracza 1:</string>
+    <string name="playerTime">Czas:</string>
+    <string name="p2time">Czas dla gracza 2:</string>
+    <string name="start">Start</string>
+    <string name="time">czas:</string>
+    <string name="p1">Gracz 1</string>
+</resources>

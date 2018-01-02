@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">Chess Clock</string>
+    <string name="p1name">Player 1 name</string>
+    <string name="p2name">Player 2 name</string>
+    <string name="p1">Player 1</string>
+    <string name="p2">Player 2</string>
+    <string name="delay">Delay time</string>
+    <string name="increment">Increment time</string>
+    <string name="gameType">Game type:</string>
+    <string name="perPlayer">Limited time for player</string>
+    <string name="perMove">Limited time for each move</string>
+    <string name="sameTime">Same time for each player</string>
+    <string name="p1time">Player 1 time:</string>
+    <string name="playerTime">Player time:</string>
+    <string name="p2time">Player 2 time:</string>
+    <string name="start">Start</string>
+    <string name="time">time:</string>
 </resources>

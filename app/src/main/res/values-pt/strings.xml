@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Relógio de Xadrez</string>
+    <string name="p1name">Nome do jogador 1</string>
+    <string name="p2name">Nome do jogador 2</string>
+    <string name="p1">Jogador 1</string>
+    <string name="p2">Jogador 2</string>
+    <string name="delay">"Atraso "</string>
+    <string name="increment">Incremento</string>
+    <string name="gameType">Tipo de jogo:</string>
+    <string name="perPlayer">Tempo limitado para jogador</string>
+    <string name="perMove">Tempo limitado da rodada</string>
+    <string name="sameTime">Mesmo tempo para cada jogador</string>
+    <string name="p1time">" Hora do jogador 1:"</string>
+    <string name="p2time">Hora do jogador 2:</string>
+    <string name="playerTime">Hora:</string>
+    <string name="start">Começar</string>
+    <string name="time">hora:</string>
+</resources>

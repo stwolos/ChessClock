@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">"Шахматные часы "</string>
+    <string name="p1name">Имя игрока 1</string>
+    <string name="p2name">Имя игрока 2</string>
+    <string name="p1">Игрок 1</string>
+    <string name="p2">Игрок 2</string>
+    <string name="delay">задержка</string>
+    <string name="increment">Время нарастания</string>
+    <string name="gameType">Тип игры:</string>
+    <string name="perPlayer">Ограниченное время для игрока</string>
+    <string name="perMove">Ограниченное время раунда</string>
+    <string name="sameTime">То же самое время для каждого игрока</string>
+    <string name="p1time">Время игрока 1:</string>
+    <string name="p2time">Время игрока 1:</string>
+    <string name="playerTime">Время игрока:</string>
+    <string name="start">Начало</string>
+    <string name="time">время:</string>
+</resources>

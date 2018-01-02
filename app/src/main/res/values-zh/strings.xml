@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">国际象棋时钟</string>
+    <string name="p1name">玩家 1 的名字</string>
+    <string name="p2name">玩家 2 的名字</string>
+    <string name="p1">玩家 1</string>
+    <string name="p2">玩家 1</string>
+    <string name="delay">延迟时间</string>
+    <string name="increment">增加时间</string>
+    <string name="gameType">游戏类型：</string>
+    <string name="perPlayer">玩家时间有限</string>
+    <string name="perMove">每一步的时间都有限</string>
+    <string name="sameTime">同一时间每个玩家</string>
+    <string name="p1time">玩家 1 次：</string>
+    <string name="time">次：</string>
+    <string name="playerTime">玩家 次：</string>
+    <string name="p2time">玩家 2 次：</string>
+    <string name="start">"开始 "</string>
+</resources>

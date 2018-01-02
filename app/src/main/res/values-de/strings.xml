@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Schachuhr</string>
+    <string name="p1name">Name des Spielers 1</string>
+    <string name="p2name">"Name des Spielers 2 "</string>
+    <string name="p1">Spieler 1</string>
+    <string name="p2">Spieler 2</string>
+    <string name="delay">Verzögerungszeit</string>
+    <string name="increment">Zeit erhöhen</string>
+    <string name="gameType">Spiel Typ:</string>
+    <string name="perPlayer">Begrenzte Zeit für den Spieler</string>
+    <string name="perMove">Begrenzte Zeit für jeden Zug</string>
+    <string name="sameTime">Die gleiche Zeit für jeden Spieler</string>
+    <string name="p1time">Spieler 1 Mal:</string>
+    <string name="playerTime">Spielerzeit:</string>
+    <string name="p2time">Spieler 2 mal:</string>
+    <string name="start">Anfang</string>
+    <string name="time">Zeit:</string>
+</resources>
